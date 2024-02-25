@@ -1,0 +1,47 @@
+@page
+@model DTsModel
+@{
+    ViewData["Title"] = "DTs - DT App";
+}
+
+<main class="text-white">
+    <h1 class="text-center text-white">@ViewData["Title"]</h1>
+    @if (!Model.showTable)
+    {
+        <div class="alert alert-danger mt-3" role="alert">
+            Something went wrong, we are working on. Please, try again later.
+        </div>
+    }
+    else if (Model.DTs == null || Model.DTs.Length == 0)
+    {
+        <div class="alert alert-info mt-3" role="alert">
+            There are no active DTs to show. Please, try again later.
+        </div>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="bg-dark-subtle" scope="col">Fullname</th>
+                    <th class="bg-dark-subtle" scope="col">Money</th>
+                    <th class="bg-dark-subtle" scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var row in Model.DTs)
+                {
+                    <tr>
+                        <td class="bg-body-secondary">@row.fullname</td>
+                        <td class="bg-body-secondary">@row.money</td>
+                        <td class="bg-body-secondary">
+                            <a asp-page="/DTDetail">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</main>
+
+<script src="~/js/DTs.js" asp-append-version="true"></script>
