@@ -35,7 +35,7 @@
                         <td class="bg-body-secondary">@row.fullname</td>
                         <td class="bg-body-secondary">@row.money</td>
                         <td class="bg-body-secondary text-end">
-                            <a asp-page="/DTDetail" class="btn btn-outline-info">Details</a>
+                            <a asp-page="/DTDetail" asp-route-id="@row.id" class="btn btn-outline-info">Details</a>
                         </td>
                     </tr>
                 }
