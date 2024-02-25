@@ -25,7 +25,7 @@
                 <tr>
                     <th class="bg-dark-subtle" scope="col">Fullname</th>
                     <th class="bg-dark-subtle" scope="col">Money</th>
-                    <th class="bg-dark-subtle" scope="col">Actions</th>
+                    <th class="bg-dark-subtle text-end" scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,8 +34,8 @@
                     <tr>
                         <td class="bg-body-secondary">@row.fullname</td>
                         <td class="bg-body-secondary">@row.money</td>
-                        <td class="bg-body-secondary">
-                            <a asp-page="/DTDetail">Details</a>
+                        <td class="bg-body-secondary text-end">
+                            <a asp-page="/DTDetail" class="btn btn-outline-info">Details</a>
                         </td>
                     </tr>
                 }
